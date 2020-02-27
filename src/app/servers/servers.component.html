@@ -1,0 +1,35 @@
+<p>servers works!</p>
+<!-- event binding and $event arg -->
+<label for="">Server Name</label>
+<input type="text" 
+ (input)="onUpdateServerName($event)"
+class="form-control">
+    <p> {{ serverName }}</p>
+<!-- two way binding -->
+
+<label for=""> two way binding</label>
+<input type="text" 
+ [(ngModel)]="serverNameNgModel"  
+class="form-control">
+<p>{{ serverNameNgModel }}</p>
+<button [disabled]="!allowNewServerNgmodel" 
+ (click)="onCreateServerNgModel()" 
+class="btn btn-primary">Add Server NgModel</button>
+<p>{{ serverCreationStatusNgModel }}</p>
+
+<!--  -->
+
+
+
+<!-- event binding with method() -- (click)="onCreateServer()" -->
+<button [disabled]="!allowNewServer" 
+ (click)="onCreateServer()" 
+class="btn btn-primary">Add Server</button>
+<!-- string interpolation  -->
+<p>{{ allowNewServer }}</p>
+<!--  property binding -->
+<p [innerText] = " allowNewServer "></p>
+<!-- they gives same results -->
+<!--  -->
+<p>{{ serverCreationStatus }}</p>
+
